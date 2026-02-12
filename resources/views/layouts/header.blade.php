@@ -85,13 +85,30 @@
             DesTTrip
         </a>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="{{ url('/') }}">Home</a></li>
+            <li><a href="{{ url('/about') }}">About</a></li>
+            <li><a href="{{url('/tour')}}">Tour Package</a></li>
+            <li> <a href="#"> Blog</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            
         </ul>
         <div class="mobile-menu" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </div>
     </nav>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'white';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.padding = '2rem';
+            navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+        }
+    </script>
