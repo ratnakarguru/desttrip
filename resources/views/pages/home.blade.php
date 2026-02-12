@@ -1,3 +1,5 @@
+@extends('app')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -629,49 +631,7 @@
             box-shadow: 0 4px 12px rgba(233,92,51,0.4);
         }
 
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 5%;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-text {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
+       
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -804,7 +764,6 @@
 <body>
 
    <!-- header -->
-@include('layouts.header')
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
@@ -827,11 +786,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
-        <div class="section-header fade-in">
-            <h2>Why Choose Us</h2>
-            <p>We're committed to creating travel experiences that are ethical, fair, and positive for both travelers and the communities they visit.</p>
-        </div>
+   
         
         <div class="about-grid">
             <div class="about-card fade-in">
@@ -1095,9 +1050,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    @include('layouts.footer')
-
     <!-- Notification -->
     <div class="notification" id="notification">
         <i class="fas fa-check-circle"></i>
@@ -1231,20 +1183,6 @@
             }, 3000);
         }
 
-        // Mobile menu toggle
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.right = '0';
-            navLinks.style.background = 'white';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.padding = '2rem';
-            navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-        }
-
         // Add parallax effect to hero
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
@@ -1254,3 +1192,4 @@
     </script>
 </body>
 </html>
+@endsection()
